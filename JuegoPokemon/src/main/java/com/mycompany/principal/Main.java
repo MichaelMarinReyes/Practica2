@@ -1,4 +1,4 @@
-package com.mycompany.juegopokemon;
+package com.mycompany.principal;
 
 import com.mycompany.gui.VentanaPrincipalJFrame;
 

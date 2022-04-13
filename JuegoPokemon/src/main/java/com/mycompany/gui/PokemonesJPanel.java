@@ -24,19 +24,54 @@ public class PokemonesJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        textoTiendaJLabel = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        mostrarCostojTextField = new javax.swing.JTextField();
+        botonComprarjButton = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        listadoPokemonesjTable = new javax.swing.JTable();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        textoTiendaJLabel.setFont(new java.awt.Font("Meslo LG L DZ for Powerline", 1, 24)); // NOI18N
+        textoTiendaJLabel.setText("Tienda de Pokemones");
+        add(textoTiendaJLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Meslo LG L DZ for Powerline", 1, 24)); // NOI18N
+        jLabel1.setText("Costo:");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, -1, -1));
+
+        mostrarCostojTextField.setFont(new java.awt.Font("Meslo LG L DZ for Powerline", 1, 24)); // NOI18N
+        add(mostrarCostojTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 20, -1, -1));
+
+        botonComprarjButton.setFont(new java.awt.Font("Meslo LG L DZ for Powerline", 1, 24)); // NOI18N
+        botonComprarjButton.setText("Comprar");
+        add(botonComprarjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 20, -1, -1));
+
+        listadoPokemonesjTable.setFont(new java.awt.Font("Meslo LG L DZ for Powerline", 1, 15)); // NOI18N
+        listadoPokemonesjTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(listadoPokemonesjTable);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 840, 470));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonComprarjButton;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable listadoPokemonesjTable;
+    private javax.swing.JTextField mostrarCostojTextField;
+    private javax.swing.JLabel textoTiendaJLabel;
     // End of variables declaration//GEN-END:variables
 }
