@@ -1,6 +1,6 @@
 package com.mycompany.juegopokemon;
 
-import com.mycompany.gui.VentanaPrincipal;
+import com.mycompany.gui.VentanaPrincipalJFrame;
 
 /**
  *
@@ -9,7 +9,7 @@ import com.mycompany.gui.VentanaPrincipal;
 public class Main {
 
     public static void main(String[] args) {
-        VentanaPrincipal gui = new VentanaPrincipal();
+        VentanaPrincipalJFrame gui = new VentanaPrincipalJFrame();
         gui.setVisible(true);
     }
     
