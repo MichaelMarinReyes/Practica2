@@ -1,4 +1,4 @@
-package com.mycompany.gui;
+package com.mycompany.gui.menutienda;
 
 import com.mycompany.pokemones.ArregloPokemones;
 import javax.swing.table.DefaultTableModel;

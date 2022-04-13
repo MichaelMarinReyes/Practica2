@@ -1,9 +1,9 @@
 package com.mycompany.gui;
 
-import java.awt.BorderLayout;
-import java.awt.Graphics;
-import java.awt.Image;
-import javax.swing.ImageIcon;
+import com.mycompany.gui.menutienda.PokemonesJPanel;
+import com.mycompany.gui.menutienda.MedicinaJPanel;
+import com.mycompany.gui.menutienda.ComidaJPanel;
+import com.mycompany.gui.opcionesayuda.*;
 import javax.swing.JPanel;
 
 /**
@@ -43,8 +43,12 @@ public class VentanaPrincipalJFrame extends javax.swing.JFrame {
         botonTiendaPokemones = new javax.swing.JMenuItem();
         botonRevirir = new javax.swing.JMenuItem();
         botonReportes = new javax.swing.JMenu();
-        botonAcercaDe = new javax.swing.JMenu();
         botonAyuda = new javax.swing.JMenu();
+        botonAyudaPasearjMenuItem = new javax.swing.JMenuItem();
+        botonAyudaMiPokejMenuItem = new javax.swing.JMenuItem();
+        ayudaTiendajMenuItem = new javax.swing.JMenuItem();
+        ayudaReportesjMenuItem = new javax.swing.JMenuItem();
+        botonAcercaDe = new javax.swing.JMenu();
 
         jMenu4.setText("jMenu4");
 
@@ -69,7 +73,7 @@ public class VentanaPrincipalJFrame extends javax.swing.JFrame {
         jMenuBar1.add(botonPasear);
 
         botonMiPoke.setForeground(new java.awt.Color(0, 0, 0));
-        botonMiPoke.setText("Mis Pokemones");
+        botonMiPoke.setText("Mi Poke");
         jMenuBar1.add(botonMiPoke);
 
         botonTienda.setForeground(new java.awt.Color(0, 0, 0));
@@ -131,6 +135,48 @@ public class VentanaPrincipalJFrame extends javax.swing.JFrame {
         });
         jMenuBar1.add(botonReportes);
 
+        botonAyuda.setForeground(new java.awt.Color(0, 0, 0));
+        botonAyuda.setText("Ayuda");
+        botonAyuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAyudaActionPerformed(evt);
+            }
+        });
+
+        botonAyudaPasearjMenuItem.setText("Pasear");
+        botonAyudaPasearjMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAyudaPasearjMenuItemActionPerformed(evt);
+            }
+        });
+        botonAyuda.add(botonAyudaPasearjMenuItem);
+
+        botonAyudaMiPokejMenuItem.setText("Mis Pokemones");
+        botonAyudaMiPokejMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAyudaMiPokejMenuItemActionPerformed(evt);
+            }
+        });
+        botonAyuda.add(botonAyudaMiPokejMenuItem);
+
+        ayudaTiendajMenuItem.setText("Tienda");
+        ayudaTiendajMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ayudaTiendajMenuItemActionPerformed(evt);
+            }
+        });
+        botonAyuda.add(ayudaTiendajMenuItem);
+
+        ayudaReportesjMenuItem.setText("Reportes");
+        ayudaReportesjMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ayudaReportesjMenuItemActionPerformed(evt);
+            }
+        });
+        botonAyuda.add(ayudaReportesjMenuItem);
+
+        jMenuBar1.add(botonAyuda);
+
         botonAcercaDe.setForeground(new java.awt.Color(0, 0, 0));
         botonAcercaDe.setText("Acerda de ...");
         botonAcercaDe.addActionListener(new java.awt.event.ActionListener() {
@@ -139,15 +185,6 @@ public class VentanaPrincipalJFrame extends javax.swing.JFrame {
             }
         });
         jMenuBar1.add(botonAcercaDe);
-
-        botonAyuda.setForeground(new java.awt.Color(0, 0, 0));
-        botonAyuda.setText("Ayuda");
-        botonAyuda.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAyudaActionPerformed(evt);
-            }
-        });
-        jMenuBar1.add(botonAyuda);
 
         setJMenuBar(jMenuBar1);
 
@@ -210,14 +247,40 @@ public class VentanaPrincipalJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_botonAcercaDeActionPerformed
 
     private void botonAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAyudaActionPerformed
-        // TODO add your handling code here:
-        AyudaJPanel ayuda = new AyudaJPanel();
-        this.cambiarPanel(ayuda);
+
     }//GEN-LAST:event_botonAyudaActionPerformed
 
+    private void botonAyudaPasearjMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAyudaPasearjMenuItemActionPerformed
+        // TODO add your handling code here:
+        AyudaPasearJPanel ayudaPasear = new AyudaPasearJPanel();
+        this.cambiarPanel(ayudaPasear);
+    }//GEN-LAST:event_botonAyudaPasearjMenuItemActionPerformed
+
+    private void botonAyudaMiPokejMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAyudaMiPokejMenuItemActionPerformed
+        // TODO add your handling code here:
+        AyudaMisPokemonesJPanel ayudaMiPoke = new AyudaMisPokemonesJPanel();
+        this.cambiarPanel(ayudaMiPoke);
+    }//GEN-LAST:event_botonAyudaMiPokejMenuItemActionPerformed
+
+    private void ayudaReportesjMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ayudaReportesjMenuItemActionPerformed
+        // TODO add your handling code here:
+        AyudaReportesJPanel ayudaReportes = new AyudaReportesJPanel();
+        this.cambiarPanel(ayudaReportes);
+    }//GEN-LAST:event_ayudaReportesjMenuItemActionPerformed
+
+    private void ayudaTiendajMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ayudaTiendajMenuItemActionPerformed
+        // TODO add your handling code here:
+        AyudaTienda ayudaTienda = new AyudaTienda();
+        this.cambiarPanel(ayudaTienda);
+    }//GEN-LAST:event_ayudaTiendajMenuItemActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem ayudaReportesjMenuItem;
+    private javax.swing.JMenuItem ayudaTiendajMenuItem;
     private javax.swing.JMenu botonAcercaDe;
     private javax.swing.JMenu botonAyuda;
+    private javax.swing.JMenuItem botonAyudaMiPokejMenuItem;
+    private javax.swing.JMenuItem botonAyudaPasearjMenuItem;
     private javax.swing.JMenu botonMiPoke;
     private javax.swing.JMenu botonPasear;
     private javax.swing.JMenu botonReportes;
