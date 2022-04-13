@@ -12,15 +12,14 @@ import javax.swing.JPanel;
  */
 public class VentanaPrincipalJFrame extends javax.swing.JFrame {
 
-    FondoFrame fondo = new FondoFrame();
-
+//    FondoFrame fondo = new FondoFrame();
     /**
      * Creates new form Frame
      */
     public VentanaPrincipalJFrame() {
         initComponents();
         setLocationRelativeTo(null);
-        this.setContentPane(fondo);
+//        this.setContentPane(fondo);
     }
 
     /**
@@ -53,9 +52,8 @@ public class VentanaPrincipalJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Pokemon Memory");
-        setPreferredSize(new java.awt.Dimension(920, 640));
 
-        contenedorJPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        contenedorJPanel.setLayout(new java.awt.CardLayout());
 
         jMenuBar1.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -76,6 +74,11 @@ public class VentanaPrincipalJFrame extends javax.swing.JFrame {
 
         botonTienda.setForeground(new java.awt.Color(0, 0, 0));
         botonTienda.setText("Tienda");
+        botonTienda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonTiendaActionPerformed(evt);
+            }
+        });
 
         botonTiendaComida.setBackground(new java.awt.Color(0, 255, 153));
         botonTiendaComida.setForeground(new java.awt.Color(153, 102, 0));
@@ -90,11 +93,21 @@ public class VentanaPrincipalJFrame extends javax.swing.JFrame {
         botonTiendaMedicamentos.setBackground(new java.awt.Color(51, 255, 153));
         botonTiendaMedicamentos.setForeground(new java.awt.Color(255, 0, 0));
         botonTiendaMedicamentos.setText("Medicina");
+        botonTiendaMedicamentos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonTiendaMedicamentosActionPerformed(evt);
+            }
+        });
         botonTienda.add(botonTiendaMedicamentos);
 
         botonTiendaPokemones.setBackground(new java.awt.Color(102, 255, 153));
         botonTiendaPokemones.setForeground(new java.awt.Color(0, 153, 0));
         botonTiendaPokemones.setText("Pokemones");
+        botonTiendaPokemones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonTiendaPokemonesActionPerformed(evt);
+            }
+        });
         botonTienda.add(botonTiendaPokemones);
 
         botonRevirir.setBackground(new java.awt.Color(153, 255, 153));
@@ -111,14 +124,29 @@ public class VentanaPrincipalJFrame extends javax.swing.JFrame {
 
         botonReportes.setForeground(new java.awt.Color(0, 0, 0));
         botonReportes.setText("Reportes");
+        botonReportes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonReportesActionPerformed(evt);
+            }
+        });
         jMenuBar1.add(botonReportes);
 
         botonAcercaDe.setForeground(new java.awt.Color(0, 0, 0));
         botonAcercaDe.setText("Acerda de ...");
+        botonAcercaDe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAcercaDeActionPerformed(evt);
+            }
+        });
         jMenuBar1.add(botonAcercaDe);
 
         botonAyuda.setForeground(new java.awt.Color(0, 0, 0));
         botonAyuda.setText("Ayuda");
+        botonAyuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonAyudaActionPerformed(evt);
+            }
+        });
         jMenuBar1.add(botonAyuda);
 
         setJMenuBar(jMenuBar1);
@@ -127,11 +155,11 @@ public class VentanaPrincipalJFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(contenedorJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 930, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(contenedorJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(contenedorJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(contenedorJPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -144,24 +172,48 @@ public class VentanaPrincipalJFrame extends javax.swing.JFrame {
     private void botonPasearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPasearActionPerformed
         // TODO add your handling code here:
         BatallaJPanel batalla = new BatallaJPanel();
-        batalla.setSize(880, 570);
-        batalla.setLocation(0, 0);
-
-        contenedorJPanel.removeAll();
-        contenedorJPanel.add(batalla, BorderLayout.CENTER);
-        contenedorJPanel.revalidate();
+        this.cambiarPanel(batalla);
     }//GEN-LAST:event_botonPasearActionPerformed
 
     private void botonTiendaComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonTiendaComidaActionPerformed
         // TODO add your handling code here:
-        BatallaJPanel batalla = new BatallaJPanel();
-        batalla.setSize(880, 570);
-        batalla.setLocation(0, 0);
-
-        contenedorJPanel.removeAll();
-        contenedorJPanel.add(batalla, BorderLayout.CENTER);
-        contenedorJPanel.revalidate();
+        ComidaJPanel comida = new ComidaJPanel();
+        this.cambiarPanel(comida);
     }//GEN-LAST:event_botonTiendaComidaActionPerformed
+
+    private void botonTiendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonTiendaActionPerformed
+
+    }//GEN-LAST:event_botonTiendaActionPerformed
+
+    private void botonTiendaMedicamentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonTiendaMedicamentosActionPerformed
+        // TODO add your handling code here:
+        MedicinaJPanel medicina = new MedicinaJPanel();
+        this.cambiarPanel(medicina);
+    }//GEN-LAST:event_botonTiendaMedicamentosActionPerformed
+
+    private void botonTiendaPokemonesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonTiendaPokemonesActionPerformed
+        // TODO add your handling code here:
+        PokemonesJPanel pokemones = new PokemonesJPanel();
+        this.cambiarPanel(pokemones);
+    }//GEN-LAST:event_botonTiendaPokemonesActionPerformed
+
+    private void botonReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonReportesActionPerformed
+        // TODO add your handling code here:
+        ReportesJPanel reporte = new ReportesJPanel();
+        this.cambiarPanel(reporte);
+    }//GEN-LAST:event_botonReportesActionPerformed
+
+    private void botonAcercaDeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAcercaDeActionPerformed
+        // TODO add your handling code here:
+        AcercaDeJPanel info = new AcercaDeJPanel();
+        this.cambiarPanel(info);
+    }//GEN-LAST:event_botonAcercaDeActionPerformed
+
+    private void botonAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAyudaActionPerformed
+        // TODO add your handling code here:
+        AyudaJPanel ayuda = new AyudaJPanel();
+        this.cambiarPanel(ayuda);
+    }//GEN-LAST:event_botonAyudaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu botonAcercaDe;
@@ -180,16 +232,23 @@ public class VentanaPrincipalJFrame extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 
-    class FondoFrame extends JPanel {
-
-        private Image imagen;
-
-        @Override
-        public void paint(Graphics g) {
-            imagen = new ImageIcon(getClass().getResource("/com/mycompany/gui/imagenes/FondoFrame.png")).getImage();
-            g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
-            setOpaque(false);
-            super.paint(g);
-        }
+    public void cambiarPanel(JPanel panel) {
+        contenedorJPanel.removeAll();
+        contenedorJPanel.add(panel);
+        contenedorJPanel.repaint();
+        contenedorJPanel.revalidate();
     }
+
+//    class FondoFrame extends JPanel {
+//
+//        private Image imagen;
+//
+//        @Override
+//        public void paint(Graphics g) {
+//            imagen = new ImageIcon(getClass().getResource("/com/mycompany/gui/imagenes/FondoFrame.png")).getImage();
+//            g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
+//            setOpaque(false);
+//            super.paint(g);
+//        }
+//    }
 }

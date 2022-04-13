@@ -15,7 +15,7 @@ public class ArregloPokemones {
     public ArregloPokemones() {
     }
     
-    public void almacenajePokemones() {
+    public Pokemon[] almacenajePokemones() {
         pokemon[0] = new Bulbasaur("Bulbasaur", " ", 0, 0, 0, 0, 0, 0, 0);
         pokemon[1] = new Ivysaurio("Ivysaurio", " ", 0, 0, 0, 0, 0, 0, 0);
         pokemon[2] = new Venusaur("Venusaur", " ", 0, 0, 0, 0, 0, 0, 0);
@@ -155,7 +155,7 @@ public class ArregloPokemones {
         pokemon[136] = new Porygon("Porygon", " ", 0, 0, 0, 0, 0, 0, 0);
         pokemon[137] = new Omanyte("Omanyte", " ", 0, 0, 0, 0, 0, 0, 0);
         pokemon[138] = new Omastar("Omastar", " ", 0, 0, 0, 0, 0, 0, 0);
-        pokemon[139] = new Kabuto("Kabuto", " ", 0, 0, 0, 0, 0, 0, 0);
+        pokemon[139] = new Kabuto("Kabuto", " ", 0, 0, 0, 0, 0, 0, 0); 
         pokemon[140] = new Kabutops("Kabutops", " ", 0, 0, 0, 0, 0, 0, 0);
         pokemon[141] = new Aerodactyl("Aerodactyl", " ", 0, 0, 0, 0, 0, 0, 0);
         pokemon[142] = new Snorlax("Snorlax", " ", 0, 0, 0, 0, 0, 0, 0);
@@ -167,5 +167,7 @@ public class ArregloPokemones {
         pokemon[148] = new Dragonite("Dragonite", " ", 0, 0, 0, 0, 0, 0, 0);
         pokemon[149] = new Mewtwo("Mewtwo", " ", 0, 0, 0, 0, 0, 0, 0);
         pokemon[150] = new Mew("Mew", " ", 0, 0, 0, 0, 0, 0, 0);
+        
+        return pokemon;
     }
 }
