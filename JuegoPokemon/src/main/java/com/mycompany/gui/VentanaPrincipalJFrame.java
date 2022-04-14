@@ -3,7 +3,7 @@ package com.mycompany.gui;
 import com.mycompany.gui.menutienda.PokemonesJPanel;
 import com.mycompany.gui.menutienda.MedicinaJPanel;
 import com.mycompany.gui.menutienda.ComidaJPanel;
-import com.mycompany.gui.opcionesayuda.*;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -36,7 +36,9 @@ public class VentanaPrincipalJFrame extends javax.swing.JFrame {
         contenedorJPanel = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         botonPasear = new javax.swing.JMenu();
+        mostrarBatallajMenuItem = new javax.swing.JMenuItem();
         botonMiPoke = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         botonTienda = new javax.swing.JMenu();
         botonTiendaComida = new javax.swing.JMenuItem();
         botonTiendaMedicamentos = new javax.swing.JMenuItem();
@@ -70,10 +72,28 @@ public class VentanaPrincipalJFrame extends javax.swing.JFrame {
                 botonPasearActionPerformed(evt);
             }
         });
+
+        mostrarBatallajMenuItem.setText("Salir a pasear");
+        mostrarBatallajMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mostrarBatallajMenuItemActionPerformed(evt);
+            }
+        });
+        botonPasear.add(mostrarBatallajMenuItem);
+
         jMenuBar1.add(botonPasear);
 
         botonMiPoke.setForeground(new java.awt.Color(0, 0, 0));
         botonMiPoke.setText("Mi Poke");
+
+        jMenuItem1.setText("Ver mis pokemones");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        botonMiPoke.add(jMenuItem1);
+
         jMenuBar1.add(botonMiPoke);
 
         botonTienda.setForeground(new java.awt.Color(0, 0, 0));
@@ -208,8 +228,7 @@ public class VentanaPrincipalJFrame extends javax.swing.JFrame {
 
     private void botonPasearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPasearActionPerformed
         // TODO add your handling code here:
-        BatallaJPanel batalla = new BatallaJPanel();
-        this.cambiarPanel(batalla);
+
     }//GEN-LAST:event_botonPasearActionPerformed
 
     private void botonTiendaComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonTiendaComidaActionPerformed
@@ -252,27 +271,75 @@ public class VentanaPrincipalJFrame extends javax.swing.JFrame {
 
     private void botonAyudaPasearjMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAyudaPasearjMenuItemActionPerformed
         // TODO add your handling code here:
-        AyudaPasearJPanel ayudaPasear = new AyudaPasearJPanel();
-        this.cambiarPanel(ayudaPasear);
+        String ayudaPasear = "	               -Pasear-\n"
+                + "\n"
+                + "· Al momento de sacar a pasear una mascota puede\n"
+                + "  encontrarse con algún pokemon salvaje, comenzará una\n"
+                + "  batalla donde es un juego de memorias, dependiendo\n"
+                + "  del nivel de su pokemon será la cantidad de pares de\n"
+                + "  cartas, gana el que tenga más parejas descubiertas.";
+
+        JOptionPane.showMessageDialog(null, ayudaPasear);
+
     }//GEN-LAST:event_botonAyudaPasearjMenuItemActionPerformed
 
     private void botonAyudaMiPokejMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAyudaMiPokejMenuItemActionPerformed
         // TODO add your handling code here:
-        AyudaMisPokemonesJPanel ayudaMiPoke = new AyudaMisPokemonesJPanel();
-        this.cambiarPanel(ayudaMiPoke);
+        String ayudaMiPoke = "	        -Mis Pokemones-\n"
+                + "· Puede ver las mascotas que ha comprado y el\n"
+                + "  estado en el que se encuentran, es decir, si\n"
+                + "  tienen hambre, si necesitan limpieza, si han\n"
+                + "  enfermado o si la mascota ha muerto.";
+
+        JOptionPane.showMessageDialog(null, ayudaMiPoke);
     }//GEN-LAST:event_botonAyudaMiPokejMenuItemActionPerformed
 
     private void ayudaReportesjMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ayudaReportesjMenuItemActionPerformed
         // TODO add your handling code here:
-        AyudaReportesJPanel ayudaReportes = new AyudaReportesJPanel();
-        this.cambiarPanel(ayudaReportes);
+        String ayudaReportes = "	            -Reportes-\n"
+                + "\n"
+                + "· Muesta una tabla donde se indica los movimientos\n"
+                + "  hechos por cada mascota, como fecha de\n"
+                + "  nacimiento, partidas ganadas, veces que ha\n"
+                + "  enfermado, veces que ha comido, veces que ha\n"
+                + "  enfermado y cuando ha muerto.";
+
+        JOptionPane.showMessageDialog(null, ayudaReportes);
     }//GEN-LAST:event_ayudaReportesjMenuItemActionPerformed
 
     private void ayudaTiendajMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ayudaTiendajMenuItemActionPerformed
         // TODO add your handling code here:
-        AyudaTienda ayudaTienda = new AyudaTienda();
-        this.cambiarPanel(ayudaTienda);
+        String ayudaTienda = "   		  -Tienda-\n"
+                + "\n"
+                + "· En el menú de Tienda puede comprar diferentes\n"
+                + "  articulos dependiendo de sus necesidades, al dar\n"
+                + "  click en Tienda se le desplegará un listado\n"
+                + "  donde puede comprar lo siguiente:\n"
+                + "\n"
+                + "· Comida: muestra un listado de diferentes alimentos\n"
+                + "  que permite que la mascota sea menos propenso a\n"
+                + "  enfermarse.\n"
+                + "\n"
+                + "· Medicamento: si en caso una de las mascota se enferma\n"
+                + "  puede comprar algunos de los medicamentos disponibles\n"
+                + "\n"
+                + "  Pokemones: puede almacenar un máximo de 10 mascotas,\n"
+                + "  si en caso aún tiene espacios disponibles puede comprar\n"
+                + "  la mascota que desse.";
+        JOptionPane.showMessageDialog(null, ayudaTienda);
     }//GEN-LAST:event_ayudaTiendajMenuItemActionPerformed
+
+    private void mostrarBatallajMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarBatallajMenuItemActionPerformed
+        // TODO add your handling code here:
+        BatallaJPanel batalla = new BatallaJPanel();
+        this.cambiarPanel(batalla);
+    }//GEN-LAST:event_mostrarBatallajMenuItemActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        MiPokeJPanel  miPoke = new MiPokeJPanel();
+        this.cambiarPanel(miPoke);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem ayudaReportesjMenuItem;
@@ -293,6 +360,8 @@ public class VentanaPrincipalJFrame extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem mostrarBatallajMenuItem;
     // End of variables declaration//GEN-END:variables
 
     public void cambiarPanel(JPanel panel) {

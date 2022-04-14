@@ -44,6 +44,7 @@ public class PokemonesJPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Meslo LG L DZ for Powerline", 1, 24)); // NOI18N
         jLabel1.setText("Costo:");
 
+        mostrarCostojTextField.setEditable(false);
         mostrarCostojTextField.setFont(new java.awt.Font("Meslo LG L DZ for Powerline", 1, 24)); // NOI18N
 
         botonComprarjButton.setFont(new java.awt.Font("Meslo LG L DZ for Powerline", 1, 24)); // NOI18N
@@ -51,17 +52,17 @@ public class PokemonesJPanel extends javax.swing.JPanel {
 
         listadoPokemonesjTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null}
+                {null, null, null, null}
             },
             new String [] {
-                "No.", "Imagen", "Nombre"
+                "No.", "Imagen", "Nombre", "Costo"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Object.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.Object.class, java.lang.String.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
-                true, false, false
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -73,6 +74,16 @@ public class PokemonesJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane2.setViewportView(listadoPokemonesjTable);
+        if (listadoPokemonesjTable.getColumnModel().getColumnCount() > 0) {
+            listadoPokemonesjTable.getColumnModel().getColumn(0).setResizable(false);
+            listadoPokemonesjTable.getColumnModel().getColumn(0).setPreferredWidth(4);
+            listadoPokemonesjTable.getColumnModel().getColumn(1).setResizable(false);
+            listadoPokemonesjTable.getColumnModel().getColumn(1).setPreferredWidth(100);
+            listadoPokemonesjTable.getColumnModel().getColumn(2).setResizable(false);
+            listadoPokemonesjTable.getColumnModel().getColumn(2).setPreferredWidth(30);
+            listadoPokemonesjTable.getColumnModel().getColumn(3).setResizable(false);
+            listadoPokemonesjTable.getColumnModel().getColumn(3).setPreferredWidth(4);
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -89,7 +100,8 @@ public class PokemonesJPanel extends javax.swing.JPanel {
                         .addComponent(mostrarCostojTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(100, 100, 100)
                         .addComponent(botonComprarjButton))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 762, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 762, Short.MAX_VALUE))
+                .addGap(18, 18, 18))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,8 +114,9 @@ public class PokemonesJPanel extends javax.swing.JPanel {
                         .addComponent(jLabel1))
                     .addComponent(mostrarCostojTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botonComprarjButton))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addComponent(jScrollPane2)
+                .addGap(24, 24, 24))
         );
     }// </editor-fold>//GEN-END:initComponents
 

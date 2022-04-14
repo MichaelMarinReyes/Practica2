@@ -26,21 +26,66 @@ public class MiPokeJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setPreferredSize(new java.awt.Dimension(880, 571));
+        jScrollPane1 = new javax.swing.JScrollPane();
+        miPokejTable = new javax.swing.JTable();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 880, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 570, Short.MAX_VALUE)
-        );
+        setPreferredSize(new java.awt.Dimension(880, 571));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        miPokejTable.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        miPokejTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "No.", "Imagen", "Nombre", "Nivel", "Peticiones de Comida", "Peticiones de limpieza", "Peticiones de paseo", "Enfermedades"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.Object.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        miPokejTable.setRowHeight(100);
+        jScrollPane1.setViewportView(miPokejTable);
+        if (miPokejTable.getColumnModel().getColumnCount() > 0) {
+            miPokejTable.getColumnModel().getColumn(0).setResizable(false);
+            miPokejTable.getColumnModel().getColumn(0).setPreferredWidth(2);
+            miPokejTable.getColumnModel().getColumn(1).setResizable(false);
+            miPokejTable.getColumnModel().getColumn(1).setPreferredWidth(100);
+            miPokejTable.getColumnModel().getColumn(2).setResizable(false);
+            miPokejTable.getColumnModel().getColumn(2).setPreferredWidth(30);
+            miPokejTable.getColumnModel().getColumn(3).setResizable(false);
+            miPokejTable.getColumnModel().getColumn(3).setPreferredWidth(3);
+            miPokejTable.getColumnModel().getColumn(4).setResizable(false);
+            miPokejTable.getColumnModel().getColumn(4).setPreferredWidth(30);
+            miPokejTable.getColumnModel().getColumn(5).setResizable(false);
+            miPokejTable.getColumnModel().getColumn(5).setPreferredWidth(30);
+            miPokejTable.getColumnModel().getColumn(6).setResizable(false);
+            miPokejTable.getColumnModel().getColumn(6).setPreferredWidth(30);
+            miPokejTable.getColumnModel().getColumn(7).setResizable(false);
+            miPokejTable.getColumnModel().getColumn(7).setPreferredWidth(30);
+        }
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 5, 790, 560));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable miPokejTable;
     // End of variables declaration//GEN-END:variables
 }

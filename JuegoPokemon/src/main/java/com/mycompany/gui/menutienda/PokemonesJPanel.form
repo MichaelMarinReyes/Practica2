@@ -17,7 +17,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="textoTiendaJLabel" min="-2" max="-2" attributes="0"/>
@@ -28,15 +28,16 @@
                       <EmptySpace min="100" pref="100" max="-2" attributes="0"/>
                       <Component id="botonComprarjButton" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jScrollPane2" min="-2" pref="762" max="-2" attributes="0"/>
+                  <Component id="jScrollPane2" pref="762" max="32767" attributes="0"/>
               </Group>
+              <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="textoTiendaJLabel" min="-2" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
@@ -46,8 +47,9 @@
                   <Component id="mostrarCostojTextField" min="-2" max="-2" attributes="0"/>
                   <Component id="botonComprarjButton" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
-              <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+              <Component id="jScrollPane2" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -71,6 +73,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="mostrarCostojTextField">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Meslo LG L DZ for Powerline" size="24" style="1"/>
         </Property>
@@ -94,25 +97,31 @@
         <Component class="javax.swing.JTable" name="listadoPokemonesjTable">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="3" rowCount="1">
-                <Column editable="true" title="No." type="java.lang.Integer"/>
+              <Table columnCount="4" rowCount="1">
+                <Column editable="false" title="No." type="java.lang.Integer"/>
                 <Column editable="false" title="Imagen" type="java.lang.Object"/>
                 <Column editable="false" title="Nombre" type="java.lang.String"/>
+                <Column editable="false" title="Costo" type="java.lang.Integer"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
               <TableColumnModel selectionModel="0">
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="4" resizable="false">
                   <Title/>
                   <Editor/>
                   <Renderer/>
                 </Column>
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="100" resizable="false">
                   <Title/>
                   <Editor/>
                   <Renderer/>
                 </Column>
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                <Column maxWidth="-1" minWidth="-1" prefWidth="30" resizable="false">
+                  <Title/>
+                  <Editor/>
+                  <Renderer/>
+                </Column>
+                <Column maxWidth="-1" minWidth="-1" prefWidth="4" resizable="false">
                   <Title/>
                   <Editor/>
                   <Renderer/>
