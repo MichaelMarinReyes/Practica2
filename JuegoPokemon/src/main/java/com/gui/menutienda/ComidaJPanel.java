@@ -39,7 +39,7 @@ public class ComidaJPanel extends javax.swing.JPanel {
 
         jLabel2.setFont(new java.awt.Font("Meslo LG L DZ for Powerline", 1, 24)); // NOI18N
         jLabel2.setText("Costo:");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 400, -1, -1));
 
         jTextField1.setEditable(false);
         jTextField1.setFont(new java.awt.Font("Meslo LG L DZ for Powerline", 1, 24)); // NOI18N
@@ -49,11 +49,11 @@ public class ComidaJPanel extends javax.swing.JPanel {
                 jTextField1ActionPerformed(evt);
             }
         });
-        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 60, -1));
+        add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 400, 60, -1));
 
         jButton1.setFont(new java.awt.Font("Meslo LG L DZ for Powerline", 1, 24)); // NOI18N
         jButton1.setText("Comprar");
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, -1, -1));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 400, -1, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -92,7 +92,7 @@ public class ComidaJPanel extends javax.swing.JPanel {
             jTable1.getColumnModel().getColumn(3).setPreferredWidth(4);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 583, 305));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 583, 305));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

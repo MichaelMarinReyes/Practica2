@@ -3,6 +3,7 @@ package com.gui;
 import com.gui.menutienda.PokemonesJPanel;
 import com.gui.menutienda.MedicinaJPanel;
 import com.gui.menutienda.ComidaJPanel;
+import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -14,20 +15,17 @@ import javax.swing.JPanel;
  */
 public class VentanaPrincipalJFrame extends javax.swing.JFrame {
 
-//    FondoFrame fondo = new FondoFrame();
+    FondoPanel fondo = new FondoPanel();
     /**
      * Creates new form Frame
      */
     public VentanaPrincipalJFrame() {
         initComponents();
-        setIconImage(new ImageIcon(getClass().getResource("/com/gui/imagenes/LogoTitulo.png")).getImage());
+        setIconImage(new ImageIcon(getClass().getResource("/com/imagenes/fotos/LogoTitulo.png")).getImage());
         setSize(800, 570);
         setLocationRelativeTo(null);
-
-//        this.setContentPane(fondo);
     }
 
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -39,7 +37,7 @@ public class VentanaPrincipalJFrame extends javax.swing.JFrame {
 
         jMenu4 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
-        contenedorJPanel = new javax.swing.JPanel();
+        contenedorJPanel = new FondoPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         botonPasear = new javax.swing.JMenu();
         botonMiPoke = new javax.swing.JMenu();
@@ -254,7 +252,7 @@ public class VentanaPrincipalJFrame extends javax.swing.JFrame {
                 + "  del nivel de su pokemon será la cantidad de pares de\n"
                 + "  cartas, gana el que tenga más parejas descubiertas.";
 
-        JOptionPane.showMessageDialog(null, ayudaPasear);
+        JOptionPane.showMessageDialog(this, ayudaPasear);
 
     }//GEN-LAST:event_botonAyudaPasearjMenuItemActionPerformed
 
@@ -266,7 +264,7 @@ public class VentanaPrincipalJFrame extends javax.swing.JFrame {
                 + "  tienen hambre, si necesitan limpieza, si han\n"
                 + "  enfermado o si la mascota ha muerto.";
 
-        JOptionPane.showMessageDialog(null, ayudaMiPoke);
+        JOptionPane.showMessageDialog(this, ayudaMiPoke);
     }//GEN-LAST:event_botonAyudaMiPokejMenuItemActionPerformed
 
     private void ayudaReportesjMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ayudaReportesjMenuItemActionPerformed
@@ -279,7 +277,7 @@ public class VentanaPrincipalJFrame extends javax.swing.JFrame {
                 + "  enfermado, veces que ha comido, veces que ha\n"
                 + "  enfermado y cuando ha muerto.";
 
-        JOptionPane.showMessageDialog(null, ayudaReportes);
+        JOptionPane.showMessageDialog(this, ayudaReportes);
     }//GEN-LAST:event_ayudaReportesjMenuItemActionPerformed
 
     private void ayudaTiendajMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ayudaTiendajMenuItemActionPerformed
@@ -301,14 +299,14 @@ public class VentanaPrincipalJFrame extends javax.swing.JFrame {
                 + "  Pokemones: puede almacenar un máximo de 10 mascotas,\n"
                 + "  si en caso aún tiene espacios disponibles puede comprar\n"
                 + "  la mascota que desse.";
-        JOptionPane.showMessageDialog(null, ayudaTienda);
+        JOptionPane.showMessageDialog(this, ayudaTienda);
     }//GEN-LAST:event_ayudaTiendajMenuItemActionPerformed
 
     private void botonAcercaDeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAcercaDeMousePressed
         // TODO add your handling code here:
         String acercaDe = "Version 1.0\nDesarrollado por estudiante de Introducción\n"
                 + "a la programación y computación 1";
-        JOptionPane.showMessageDialog(null, acercaDe);
+        JOptionPane.showMessageDialog(this, acercaDe);
     }//GEN-LAST:event_botonAcercaDeMousePressed
 
     private void botonPasearMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonPasearMousePressed
@@ -357,16 +355,18 @@ public class VentanaPrincipalJFrame extends javax.swing.JFrame {
         contenedorJPanel.revalidate();
     }
 
-//    class FondoFrame extends JPanel {
-//
-//        private Image imagen;
-//
-//        @Override
-//        public void paint(Graphics g) {
-//            imagen = new ImageIcon(getClass().getResource("/com/mycompany/gui/imagenes/FondoFrame.png")).getImage();
-//            g.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
-//            setOpaque(false);
-//            super.paint(g);
-//        }
-//    }
+    class FondoPanel extends JPanel {
+
+        private Image imagen;
+
+        @Override
+        public void paint(Graphics foto) {
+            imagen = new ImageIcon(getClass().getResource("/com/imagenes/fotos/FondoFrame.png")).getImage();
+
+            foto.drawImage(imagen, 0, 0, getWidth(), getHeight(), this);
+
+            setOpaque(false);
+            super.paint(foto);
+        }
+    }
 }

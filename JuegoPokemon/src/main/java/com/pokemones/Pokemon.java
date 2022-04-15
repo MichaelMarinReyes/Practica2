@@ -6,8 +6,9 @@ import com.imagenes.Imagen;
  *
  * @author michael
  */
-public class Pokemon {
+public class Pokemon implements Runnable {
 
+    private final int TIEMPO_HILO = 20000;
     private String nombre;
     private String estado;
     private int nivel;
@@ -50,6 +51,19 @@ public class Pokemon {
 
     public void subirNivel() {
         this.setNivel(((int) (Math.random() * 10) + 5) * this.getNivel());
+    }
+
+    @Override
+    public void run() {
+        try {
+            if (this.getNivel() == 5) {
+            Thread.sleep(TIEMPO_HILO);
+        }
+        } catch (InterruptedException e) {
+        }
+        
+        
+    
     }
 
 }

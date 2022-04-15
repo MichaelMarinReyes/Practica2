@@ -12,7 +12,7 @@ public abstract class Imagen extends JLabel {
 
     public static final int TAMAÑO_ALTURA = 100;
     public static final int TAMAÑO_ANCHO = 100;
-    public static final String PATH = "/com/com/mycompany/imagenes/";
+    public static final String PATH = "/com/imagenes/fotos/";
     
     public Imagen(){
         this.setSize(TAMAÑO_ALTURA, TAMAÑO_ANCHO);

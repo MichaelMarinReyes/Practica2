@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package com.gui;
 
 /**
@@ -28,11 +24,12 @@ public class MiPokeJPanel extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         miPokejTable = new javax.swing.JTable();
+        alimentarjButton = new javax.swing.JButton();
+        limpiarjButton = new javax.swing.JButton();
+        curarjButton = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 153, 102));
         setForeground(new java.awt.Color(255, 153, 102));
         setPreferredSize(new java.awt.Dimension(880, 571));
-        setLayout(new java.awt.BorderLayout());
 
         miPokejTable.setBackground(new java.awt.Color(115, 229, 151));
         miPokejTable.setBorder(javax.swing.BorderFactory.createCompoundBorder());
@@ -70,6 +67,7 @@ public class MiPokeJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        miPokejTable.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
         miPokejTable.setGridColor(new java.awt.Color(153, 153, 153));
         miPokejTable.setRowHeight(100);
         miPokejTable.setSelectionBackground(new java.awt.Color(13, 123, 107));
@@ -102,12 +100,69 @@ public class MiPokeJPanel extends javax.swing.JPanel {
             miPokejTable.getColumnModel().getColumn(7).setMaxWidth(150);
         }
 
-        add(jScrollPane1, java.awt.BorderLayout.CENTER);
+        alimentarjButton.setText("Alimentar");
+        alimentarjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                alimentarjButtonActionPerformed(evt);
+            }
+        });
+
+        limpiarjButton.setText("Limpiar");
+        limpiarjButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                limpiarjButtonActionPerformed(evt);
+            }
+        });
+
+        curarjButton.setText("Curar");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(alimentarjButton, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(87, 87, 87)
+                        .addComponent(limpiarjButton, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
+                        .addComponent(curarjButton, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36))))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(alimentarjButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(curarjButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(limpiarjButton, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(14, 14, 14))
+        );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void alimentarjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alimentarjButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_alimentarjButtonActionPerformed
+
+    private void limpiarjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limpiarjButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_limpiarjButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton alimentarjButton;
+    private javax.swing.JButton curarjButton;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton limpiarjButton;
     private javax.swing.JTable miPokejTable;
     // End of variables declaration//GEN-END:variables
 }
