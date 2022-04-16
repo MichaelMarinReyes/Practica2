@@ -3,6 +3,7 @@ package com.gui;
 import com.gui.menutienda.PokemonesJPanel;
 import com.gui.menutienda.MedicinaJPanel;
 import com.gui.menutienda.ComidaJPanel;
+import com.usuario.Usuario;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
@@ -16,6 +17,7 @@ import javax.swing.JPanel;
 public class VentanaPrincipalJFrame extends javax.swing.JFrame {
 
     FondoPanel fondo = new FondoPanel();
+
     /**
      * Creates new form Frame
      */
@@ -24,6 +26,7 @@ public class VentanaPrincipalJFrame extends javax.swing.JFrame {
         setIconImage(new ImageIcon(getClass().getResource("/com/imagenes/fotos/LogoTitulo.png")).getImage());
         setSize(800, 570);
         setLocationRelativeTo(null);
+        this.mensajePokemonInicial();
     }
 
     /**
@@ -212,6 +215,14 @@ public class VentanaPrincipalJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void mensajePokemonInicial() {
+//        Usuario usuario = new Usuario();
+//        usuario.generarPokemonInicial();
+
+        JOptionPane.showMessageDialog(this, "Ha recibido un pokemon como mascota\n"
+                + "mire en la sección de Mi Poke que mascota\n"
+                + "ha recibido.", "Premio", JOptionPane.INFORMATION_MESSAGE);
+    }
     private void botonRevirirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRevirirActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botonRevirirActionPerformed
@@ -304,8 +315,9 @@ public class VentanaPrincipalJFrame extends javax.swing.JFrame {
 
     private void botonAcercaDeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAcercaDeMousePressed
         // TODO add your handling code here:
-        String acercaDe = "Version 1.0\nDesarrollado por estudiante de Introducción\n"
-                + "a la programación y computación 1";
+        String acercaDe = "Version 1.0\nDesarrollado por: Michael Marín\n"
+                + "Estudiante del curso de Introducción a la\n"
+                + "Programación y Computación 1.";
         JOptionPane.showMessageDialog(this, acercaDe);
     }//GEN-LAST:event_botonAcercaDeMousePressed
 

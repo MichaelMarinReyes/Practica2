@@ -1,15 +1,15 @@
 package com.gui.menutienda;
 
 import com.dinamicajuego.ListadoPokemones;
-import com.dinamicajuego.Tienda;
-import javax.swing.JOptionPane;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author michael
  */
-public class PokemonesJPanel extends javax.swing.JPanel {
+public class PokemonesJPanel extends javax.swing.JPanel implements ActionListener {
 
     DefaultTableModel modelo;
     ListadoPokemones[] pokemones;
@@ -19,9 +19,10 @@ public class PokemonesJPanel extends javax.swing.JPanel {
      */
     public PokemonesJPanel() {
         initComponents();
-        setSize(880, 570);
-        modelo = new DefaultTableModel();
-        pokemones = new ListadoPokemones[151];
+        this.mostrarPagina1();
+   //     this.desabilitarBotones();
+        pagina1jButton.addActionListener(this);
+        pagina2jButton.addActionListener(this);
     }
 
     /**
@@ -39,6 +40,8 @@ public class PokemonesJPanel extends javax.swing.JPanel {
         botonComprarjButton = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         listadoPokemonesjTable = new javax.swing.JTable();
+        pagina1jButton = new javax.swing.JButton();
+        pagina2jButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(140, 143, 92));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -64,111 +67,12 @@ public class PokemonesJPanel extends javax.swing.JPanel {
         });
         add(botonComprarjButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, -1, -1));
 
-        listadoPokemonesjTable.setBackground(new java.awt.Color(68, 61, 39));
+        listadoPokemonesjTable.setBackground(new java.awt.Color(204, 204, 204));
         listadoPokemonesjTable.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         listadoPokemonesjTable.setFont(new java.awt.Font("Meslo LG L DZ for Powerline", 0, 14)); // NOI18N
         listadoPokemonesjTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "No.", "Imagen", "Nombre", "Tipo", "Costo"
@@ -212,7 +116,15 @@ public class PokemonesJPanel extends javax.swing.JPanel {
             listadoPokemonesjTable.getColumnModel().getColumn(4).setMaxWidth(60);
         }
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, 460, -1));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, 460, 420));
+
+        pagina1jButton.setFont(new java.awt.Font("Meslo LG L DZ for Powerline", 0, 14)); // NOI18N
+        pagina1jButton.setText("Página 1");
+        add(pagina1jButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 490, 100, 30));
+
+        pagina2jButton.setFont(new java.awt.Font("Meslo LG L DZ for Powerline", 0, 14)); // NOI18N
+        pagina2jButton.setText("Página 2");
+        add(pagina2jButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 490, 100, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonComprarjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonComprarjButtonActionPerformed
@@ -226,17 +138,61 @@ public class PokemonesJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable listadoPokemonesjTable;
     private javax.swing.JTextField mostrarCostojTextField;
+    private javax.swing.JButton pagina1jButton;
+    private javax.swing.JButton pagina2jButton;
     private javax.swing.JLabel textoTiendaJLabel;
     // End of variables declaration//GEN-END:variables
 
-    public void mostrarPokemones() {
-        modelo = (DefaultTableModel) listadoPokemonesjTable.getModel();
-        Object[] objeto = new Object[151];
-        for (int i = 0; i < pokemones.length; i++) {
-            objeto[0] = pokemones[i];
-            objeto[0] = pokemones[i];
-            objeto[0] = pokemones[i];
-
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Object evento = e.getSource();
+        if (evento.equals(pagina1jButton)) {
+            //Ocultar página2
+            this.mostrarPagina1();
+            //validate
+     //       this.desabilitarBotones();
+        } else if (evento.equals(pagina2jButton)) {
+            //Ocultar pagina1
+            this.mostrarPagina2();
+            //validate
+     //       this.desabilitarBotones();
         }
     }
+
+    private void desabilitarBotones() {
+        if (listadoPokemonesjTable.isVisible()) {
+            pagina1jButton.setEnabled(false);
+            pagina2jButton.setEnabled(true);
+        } else {
+            pagina1jButton.setEnabled(true);
+            pagina2jButton.setEnabled(false);
+        }
+    }
+
+    private void mostrarPagina1() {
+        String nombreColumnas[] = {"No.", "Imagen", "Nombre", "Tipo", "Costo"};
+        String data[][] = new String[5][100];
+        for (int i = 0; i < 5; i++) {
+            data[i][0] = (i + 1) + "";
+            data[i][1] = "imagen";
+            data[i][2] = "Bulbasaur";
+            data[i][3] = "fuego";
+            data[i][4] = "35";
+        }
+        listadoPokemonesjTable.setModel(new DefaultTableModel(data, nombreColumnas));
+    }
+
+    private void mostrarPagina2() {
+        String nombreColumnas[] = {"No.", "Imagen", "Nombre", "Tipo", "Costo"};
+        String data[][] = new String[5][100];
+        for (int i = 0; i < 5; i++) {
+            data[i][0] = (i + 1) + "";
+            data[i][1] = "imagen";
+            data[i][2] = "Charizar";
+            data[i][3] = "fuego";
+            data[i][4] = "35";
+        }
+        listadoPokemonesjTable.setModel(new DefaultTableModel(data, nombreColumnas));
+    }
+
 }

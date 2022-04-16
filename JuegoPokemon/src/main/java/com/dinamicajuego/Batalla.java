@@ -42,7 +42,7 @@ public class Batalla {
         if (nivel == 0) {
             pares = 8;
             //nivel 1
-        } else if (nivel== 1) {
+        } else if (nivel == 1) {
             pares = 12;
         } else if (nivel == 2) {
             pares = 16;

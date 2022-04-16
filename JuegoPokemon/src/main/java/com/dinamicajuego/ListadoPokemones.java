@@ -321,15 +321,6 @@ public class ListadoPokemones {
         pokemon[149] = new Mewtwo("Mewtwo", " ", 0, 0, 0, 0, 0, 0, 0);
         pokemon[150] = new Mew("Mew", " ", 0, 0, 0, 0, 0, 0, 0);
         
-        this.mostrarListado(pokemon);
         return pokemon;
-    }
-    
-    public void mostrarListado(Pokemon[] pokemon) {
-        for (Pokemon pokemon1 : pokemon) {
-            int numero = 1;
-            System.out.print(numero + " ");
-            System.out.println(pokemon1);
-        }
     }
 }
