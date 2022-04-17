@@ -1,16 +1,23 @@
 package com.gui.menutienda;
 
+import com.comida.*;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author michael
  */
 public class ComidaJPanel extends javax.swing.JPanel {
 
+    Comida[] comida;
+    DefaultTableModel tabla;
+
     /**
      * Creates new form ComidaJPanel
      */
     public ComidaJPanel() {
         initComponents();
+        this.llenarTablaComida();
     }
 
     /**
@@ -27,7 +34,7 @@ public class ComidaJPanel extends javax.swing.JPanel {
         jTextField1 = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        datosComidajTable = new javax.swing.JTable();
 
         setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         setPreferredSize(new java.awt.Dimension(880, 57));
@@ -55,19 +62,16 @@ public class ComidaJPanel extends javax.swing.JPanel {
         jButton1.setText("Comprar");
         add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 400, -1, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        datosComidajTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "No.", "Nombre", "Descripcion", "Costo"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Object.class, java.lang.Integer.class, java.lang.Integer.class
+                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false
@@ -81,15 +85,15 @@ public class ComidaJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(0).setPreferredWidth(4);
-            jTable1.getColumnModel().getColumn(1).setPreferredWidth(30);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setPreferredWidth(100);
-            jTable1.getColumnModel().getColumn(3).setResizable(false);
-            jTable1.getColumnModel().getColumn(3).setPreferredWidth(4);
+        jScrollPane1.setViewportView(datosComidajTable);
+        if (datosComidajTable.getColumnModel().getColumnCount() > 0) {
+            datosComidajTable.getColumnModel().getColumn(0).setResizable(false);
+            datosComidajTable.getColumnModel().getColumn(0).setPreferredWidth(4);
+            datosComidajTable.getColumnModel().getColumn(1).setPreferredWidth(30);
+            datosComidajTable.getColumnModel().getColumn(2).setResizable(false);
+            datosComidajTable.getColumnModel().getColumn(2).setPreferredWidth(100);
+            datosComidajTable.getColumnModel().getColumn(3).setResizable(false);
+            datosComidajTable.getColumnModel().getColumn(3).setPreferredWidth(4);
         }
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 60, 583, 305));
@@ -97,16 +101,19 @@ public class ComidaJPanel extends javax.swing.JPanel {
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    private void llenarTablaComida() {
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable datosComidajTable;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

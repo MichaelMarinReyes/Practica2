@@ -33,6 +33,79 @@ public class Pokemon implements Runnable {
         this.batallasGanadas = batallasGanadas;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public int getPeticionesComida() {
+        return peticionesComida;
+    }
+
+    public void setPeticionesComida(int peticionesComida) {
+        this.peticionesComida = peticionesComida;
+    }
+
+    public int getPeticionesLimpieza() {
+        return peticionesLimpieza;
+    }
+
+    public void setPeticionesLimpieza(int peticionesLimpieza) {
+        this.peticionesLimpieza = peticionesLimpieza;
+    }
+
+    public int getPeticionesPaseo() {
+        return peticionesPaseo;
+    }
+
+    public void setPeticionesPaseo(int peticionesPaseo) {
+        this.peticionesPaseo = peticionesPaseo;
+    }
+
+    public int getExcrementos() {
+        return excrementos;
+    }
+
+    public void setExcrementos(int excrementos) {
+        this.excrementos = excrementos;
+    }
+
+    public int getEnfermedades() {
+        return enfermedades;
+    }
+
+    public void setEnfermedades(int enfermedades) {
+        this.enfermedades = enfermedades;
+    }
+
+    public String getProcesoDevida() {
+        return procesoDevida;
+    }
+
+    public void setProcesoDevida(String procesoDevida) {
+        this.procesoDevida = procesoDevida;
+    }
+
+    public Imagen getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(Imagen imagen) {
+        this.imagen = imagen;
+    }
+
+    
     public int getNivel() {
         return nivel;
     }

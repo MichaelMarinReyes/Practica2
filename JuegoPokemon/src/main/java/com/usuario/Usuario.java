@@ -30,6 +30,22 @@ public class Usuario {
         this.monedas = monedas;
     }
 
+    public Pokemon[] getMiPoke() {
+        return miPoke;
+    }
+
+    public void setMiPoke(Pokemon[] miPoke) {
+        this.miPoke = miPoke;
+    }
+
+    public ListadoPokemones getLisPokes() {
+        return lisPokes;
+    }
+
+    public void setLisPokes(ListadoPokemones lisPokes) {
+        this.lisPokes = lisPokes;
+    }
+
     public void generarPokemonInicial() {
         int indice = 0;
         Pokemon[] copia;
@@ -43,6 +59,11 @@ public class Usuario {
         int pokemonInicial = (int) (Math.random() * 151);
         miPoke[indice] = copia[pokemonInicial];
         indice++;
+    }
+
+    public void guardarPokemon(Pokemon mascota) {
+        miPoke = new Pokemon[10];
+        
     }
 
     public void sumarMonedasGanadas(int monedasGanadas) {

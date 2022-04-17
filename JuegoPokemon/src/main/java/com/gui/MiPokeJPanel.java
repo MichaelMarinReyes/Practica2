@@ -1,5 +1,7 @@
 package com.gui;
 
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author michael
@@ -37,16 +39,7 @@ public class MiPokeJPanel extends javax.swing.JPanel {
         miPokejTable.setForeground(new java.awt.Color(101, 226, 60));
         miPokejTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "No.", "Imagen", "Nombre", "Nivel", "Peticiones de Comida", "Peticiones de limpieza", "Peticiones de paseo", "Enfermedades"
@@ -157,6 +150,10 @@ public class MiPokeJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_limpiarjButtonActionPerformed
 
+    private void mostrarMiPoke() {
+        String nombreColumnas[] = {"No.", "Imagen", "Nombre", "Nivel", "Peticiones de Comida", "Peticiones de Limpieza", "Peticiones de paseo", "Enfermedades"};
+//        DefaultTableModel misPokes = new DefaultTableModel(nombreColumnas, );
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton alimentarjButton;

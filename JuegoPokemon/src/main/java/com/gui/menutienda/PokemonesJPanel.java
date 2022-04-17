@@ -1,8 +1,12 @@
 package com.gui.menutienda;
 
 import com.dinamicajuego.ListadoPokemones;
+import com.dinamicajuego.Tienda;
+import com.pokemones.Pokemon;
+import com.usuario.Usuario;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -12,7 +16,9 @@ import javax.swing.table.DefaultTableModel;
 public class PokemonesJPanel extends javax.swing.JPanel implements ActionListener {
 
     DefaultTableModel modelo;
-    ListadoPokemones[] pokemones;
+    Pokemon[] pokemones;
+    String[] nombreColumnas;
+    ListadoPokemones listadoPokes;
 
     /**
      * Creates new form PokemonesJPanel
@@ -20,9 +26,54 @@ public class PokemonesJPanel extends javax.swing.JPanel implements ActionListene
     public PokemonesJPanel() {
         initComponents();
         this.mostrarPagina1();
-   //     this.desabilitarBotones();
+        //     this.desabilitarBotones();
         pagina1jButton.addActionListener(this);
         pagina2jButton.addActionListener(this);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Object evento = e.getSource();
+        if (evento.equals(pagina1jButton)) {
+            //Ocultar página2
+            this.mostrarPagina1();
+            //validate
+            //       this.desabilitarBotones();
+        } else if (evento.equals(pagina2jButton)) {
+            //Ocultar pagina1
+            this.mostrarPagina2();
+            //validate
+            //       this.desabilitarBotones();
+        }
+    }
+
+    private void desabilitarBotones() {
+        if (listadoPokemonesjTable.isVisible()) {
+            pagina1jButton.setEnabled(false);
+            pagina2jButton.setEnabled(true);
+        } else {
+            pagina1jButton.setEnabled(true);
+            pagina2jButton.setEnabled(false);
+        }
+    }
+
+    private void mostrarPagina1() {
+        DefaultTableModel datos = (DefaultTableModel) listadoPokemonesjTable.getModel();
+        Object[] fila = {listadoPokes.almacenajePokemones()};
+        datos.addRow(fila);
+    }
+
+    private void mostrarPagina2() {
+        String nombreColumnas[] = {"No.", "Imagen", "Nombre", "Tipo", "Costo"};
+        String data[][] = new String[5][100];
+        for (int i = 0; i < 5; i++) {
+            data[i][0] = (i + 1) + "";
+            data[i][1] = "imagen";
+            data[i][2] = "Charizar";
+            data[i][3] = "fuego";
+            data[i][4] = "35";
+        }
+        listadoPokemonesjTable.setModel(new DefaultTableModel(data, nombreColumnas));
     }
 
     /**
@@ -56,7 +107,7 @@ public class PokemonesJPanel extends javax.swing.JPanel implements ActionListene
 
         mostrarCostojTextField.setEditable(false);
         mostrarCostojTextField.setFont(new java.awt.Font("Meslo LG L DZ for Powerline", 1, 24)); // NOI18N
-        add(mostrarCostojTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, -1, -1));
+        add(mostrarCostojTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 200, 60, -1));
 
         botonComprarjButton.setFont(new java.awt.Font("Meslo LG L DZ for Powerline", 1, 24)); // NOI18N
         botonComprarjButton.setText("Comprar");
@@ -79,7 +130,7 @@ public class PokemonesJPanel extends javax.swing.JPanel implements ActionListene
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false
@@ -129,6 +180,11 @@ public class PokemonesJPanel extends javax.swing.JPanel implements ActionListene
 
     private void botonComprarjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonComprarjButtonActionPerformed
         // TODO add your handling code here:
+        String[] opciones = {"Confirmar", "Cancelar"};
+        Tienda tienda = new Tienda();
+
+        int desicion = JOptionPane.showOptionDialog(this, "¿Seguro que desea comprar la mascota?", "Confirmación", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE, null, opciones, opciones[0]);
+        tienda.confirmaciónDeCompra(desicion);
     }//GEN-LAST:event_botonComprarjButtonActionPerformed
 
 
@@ -142,57 +198,5 @@ public class PokemonesJPanel extends javax.swing.JPanel implements ActionListene
     private javax.swing.JButton pagina2jButton;
     private javax.swing.JLabel textoTiendaJLabel;
     // End of variables declaration//GEN-END:variables
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        Object evento = e.getSource();
-        if (evento.equals(pagina1jButton)) {
-            //Ocultar página2
-            this.mostrarPagina1();
-            //validate
-     //       this.desabilitarBotones();
-        } else if (evento.equals(pagina2jButton)) {
-            //Ocultar pagina1
-            this.mostrarPagina2();
-            //validate
-     //       this.desabilitarBotones();
-        }
-    }
-
-    private void desabilitarBotones() {
-        if (listadoPokemonesjTable.isVisible()) {
-            pagina1jButton.setEnabled(false);
-            pagina2jButton.setEnabled(true);
-        } else {
-            pagina1jButton.setEnabled(true);
-            pagina2jButton.setEnabled(false);
-        }
-    }
-
-    private void mostrarPagina1() {
-        String nombreColumnas[] = {"No.", "Imagen", "Nombre", "Tipo", "Costo"};
-        String data[][] = new String[5][100];
-        for (int i = 0; i < 5; i++) {
-            data[i][0] = (i + 1) + "";
-            data[i][1] = "imagen";
-            data[i][2] = "Bulbasaur";
-            data[i][3] = "fuego";
-            data[i][4] = "35";
-        }
-        listadoPokemonesjTable.setModel(new DefaultTableModel(data, nombreColumnas));
-    }
-
-    private void mostrarPagina2() {
-        String nombreColumnas[] = {"No.", "Imagen", "Nombre", "Tipo", "Costo"};
-        String data[][] = new String[5][100];
-        for (int i = 0; i < 5; i++) {
-            data[i][0] = (i + 1) + "";
-            data[i][1] = "imagen";
-            data[i][2] = "Charizar";
-            data[i][3] = "fuego";
-            data[i][4] = "35";
-        }
-        listadoPokemonesjTable.setModel(new DefaultTableModel(data, nombreColumnas));
-    }
 
 }
